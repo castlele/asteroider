@@ -1,0 +1,18 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-std=c99",
+      "-Werror",
+      "-I./libs",
+      "-c",
+      "-o",
+      "src/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/castlelecs/dev/projects/asteroider",
+    "file": "/home/castlelecs/dev/projects/asteroider/src/main.c",
+    "output": "/home/castlelecs/dev/projects/asteroider/src/main.o"
+  }
+]
