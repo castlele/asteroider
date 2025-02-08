@@ -10,12 +10,18 @@ Asteroid CreateAsteroid(Vector2 pos, Vector2 velocity, AsteroidSize size)
         .size = size,
         .rotation = GetRandomValue(0, 360),
         .rotationSpeed = GetRandomValue(ASTEROID_ROT_SPEED_MIN, ASTEROID_ROT_SPEED_MAX),
+        .creationTime = GetTime(),
     };
 }
 
 void AsteroidUpdate(Asteroid *asteroid, float dt)
 {
     if (!asteroid->isActive) return;
+
+    if (GetTime() > asteroid->creationTime + ASTEROID_LIFE) {
+        asteroid->isActive = false;
+        return;
+    }
 
     asteroid->pos = Vector2Add(
         asteroid->pos,

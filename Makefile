@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=-Wall -std=c99 -Werror -D_DEFAULT_SOURCE
 
 LIBS_DIR=libs
-INC=-I/usr/local/include/ -I/src/
+INC=-I/usr/local/include/ -I/src/ -I./libs/
 LIB=-L/usr/local/lib/ -lraylib -lm
 
 SRC=./src
@@ -13,7 +13,7 @@ APP=./build/asteroider
 run: build
 	$(APP)
 
-build: $(SRC)/main.o $(SRC)/asteroid.o
+build: $(SRC)/main.o $(SRC)/debug.o $(SRC)/asteroid.o $(SRC)/raygui.o
 	$(CC) -o $(APP) $^ $(CFLAGS) $(INC) $(LIB)
 
 $(SRC)/%.o: $(SRC)/%.c
