@@ -13,7 +13,7 @@ APP=./build/asteroider
 run: build
 	$(APP)
 
-build: $(SRC)/main.o $(SRC)/debug.o $(SRC)/asteroid.o $(SRC)/raygui.o
+build: $(SRC)/main.o $(SRC)/debug.o $(SRC)/player.o $(SRC)/asteroid.o $(SRC)/raygui.o $(SRC)/game_asteroids.o
 	$(CC) -o $(APP) $^ $(CFLAGS) $(INC) $(LIB)
 
 $(SRC)/%.o: $(SRC)/%.c
